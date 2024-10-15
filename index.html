@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.1.3/marked.min.js"></script> <!-- Include Marked.js -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+        <li>
+          <span class="folder-toggle" data-target="folder1">markdown1/</span>
+          <ul class="nested" id="folder1">
+            <li><a href="#" data-file="markdown1/file1.md">file1.md</a></li>
+            <li><a href="#" data-file="markdown1/file2.md">file2.md</a></li>
+          </ul>
+        </li>
+        <li>
+          <span class="folder-toggle" data-target="folder2">markdown2/</span>
+          <ul class="nested" id="folder2">
+            <li><a href="#" data-file="markdown2/file3.md">file3.md</a></li>
+            <li><a href="#" data-file="markdown2/file4.md">file4.md</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+    <div class="content">
+      <div id="file-content">Select a file to view its content</div>
+    </div>
+  </div>
+</body>
+
+</html>
