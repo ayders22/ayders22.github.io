@@ -1,6 +1,6 @@
+// welcome page
 document.addEventListener('DOMContentLoaded', () => {
-  // Fetch and display the welcome markdown file when the page loads
-  fetch('welcome.md') // Use the correct path to your welcome markdown
+  fetch('welcome.md')
     .then(response => {
       if (!response.ok) {
         throw new Error('Welcome file not found');
@@ -8,16 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.text();
     })
     .then(data => {
-      const renderedMarkdown = marked(data); // Convert markdown to HTML
-      document.getElementById('file-content').innerHTML = renderedMarkdown; // Display the rendered HTML
+      const renderedMarkdown = marked(data);
+      document.getElementById('file-content').innerHTML = renderedMarkdown;
     })
     .catch(err => {
-      console.error(err); // Log the error for debugging
       document.getElementById('file-content').textContent = 'Error loading welcome file';
     });
 });
 
-// Handle folder toggling
+// left-bar toggle
 document.querySelectorAll('.folder-toggle').forEach(toggle => {
   toggle.addEventListener('click', function () {
     const targetId = this.getAttribute('data-target');
@@ -33,7 +32,7 @@ document.querySelectorAll('.folder-toggle').forEach(toggle => {
   });
 });
 
-// Handle file loading and markdown rendering
+// on-click file loader
 document.querySelectorAll('.sidebar a').forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
@@ -46,13 +45,11 @@ document.querySelectorAll('.sidebar a').forEach(link => {
         return response.text();
       })
       .then(data => {
-        const renderedMarkdown = marked(data); // Convert markdown to HTML using Marked.js
+        const renderedMarkdown = marked(data);
         document.getElementById('file-content').innerHTML = renderedMarkdown;
       })
       .catch(err => {
-        console.error(err); // Log the error for debugging
-        document.getElementById('file-content').textContent = 'Error loading fileeeee';
+        document.getElementById('file-content').textContent = 'Error loading file';
       });
   });
 });
-
